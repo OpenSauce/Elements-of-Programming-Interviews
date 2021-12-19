@@ -1,7 +1,6 @@
 package chapter_5
 
 import (
-	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -41,8 +40,7 @@ func TestSpiralOrdering(t *testing.T) {
 	for name, tc := range testCases {
 		t.Run(name, func(t *testing.T) {
 			actual := SpiralOrdering(tc.input1)
-			fmt.Println(actual)
-			assert.Equal(t, actual, tc.expected)
+			assert.Equal(t, tc.expected, actual)
 		})
 	}
 }
