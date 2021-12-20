@@ -9,15 +9,15 @@ import (
 func TestDeleteDuplicates(t *testing.T) {
 	testCases := map[string]struct {
 		input1   []int
-		expected []int
+		expected int
 	}{
 		"Duplicate Example": {
 			input1:   []int{2, 3, 5, 5, 7, 11, 11, 13},
-			expected: []int{2, 3, 5, 7, 11, 13},
+			expected: 6,
 		},
 		"All Duplicates": {
 			input1:   []int{1, 1, 1, 1, 1},
-			expected: []int{1},
+			expected: 1,
 		},
 	}
 
