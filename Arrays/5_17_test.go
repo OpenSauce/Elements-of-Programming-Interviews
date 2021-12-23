@@ -67,6 +67,7 @@ func TestSudokuChecker(t *testing.T) {
 
 	for name, tc := range testCases {
 		t.Run(name, func(t *testing.T) {
+			t.Parallel()
 			actual := SudokuChecker(tc.input1)
 			assert.Equal(t, tc.expected, actual)
 		})

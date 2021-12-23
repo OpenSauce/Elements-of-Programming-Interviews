@@ -29,6 +29,7 @@ func TestRectangleIntersection(t *testing.T) {
 
 	for name, tc := range testCases {
 		t.Run(name, func(t *testing.T) {
+			t.Parallel()
 			actual := RectangleIntersection(tc.input1, tc.input2)
 			assert.Equal(t, tc.expected, actual)
 		})

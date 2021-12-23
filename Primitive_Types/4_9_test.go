@@ -39,6 +39,7 @@ func TestDecimalPalindrome(t *testing.T) {
 
 	for name, tc := range testCases {
 		t.Run(name, func(t *testing.T) {
+			t.Parallel()
 			actual := DecimalPalindrome(tc.input)
 			assert.Equal(t, tc.expected, actual)
 		})

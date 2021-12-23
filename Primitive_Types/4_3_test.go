@@ -29,6 +29,7 @@ func TestReverseBits(t *testing.T) {
 
 	for name, tc := range testCases {
 		t.Run(name, func(t *testing.T) {
+			t.Parallel()
 			value, _ := strconv.ParseUint(tc.input, 2, 64)
 			expectedBits, _ := strconv.ParseUint(tc.expected, 2, 64)
 			actual := ReverseBits(value)
