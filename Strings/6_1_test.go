@@ -15,6 +15,10 @@ func TestStringToInteger(t *testing.T) {
 			input1:   "30",
 			expected: 30,
 		},
+		"Minus Input": {
+			input1:   "-30",
+			expected: -30,
+		},
 		"Multiple Digits": {
 			input1:   "485",
 			expected: 485,
@@ -43,6 +47,10 @@ func TestIntegerToString(t *testing.T) {
 			input1:   30,
 			expected: "30",
 		},
+		"Minus Input": {
+			input1:   -30,
+			expected: "-30",
+		},
 		"Multiple Characters": {
 			input1:   485,
 			expected: "485",
@@ -55,7 +63,6 @@ func TestIntegerToString(t *testing.T) {
 
 	for name, tc := range testCases {
 		t.Run(name, func(t *testing.T) {
-			t.Parallel()
 			actual := IntegerToString(tc.input1)
 			assert.Equal(t, tc.expected, actual)
 		})
