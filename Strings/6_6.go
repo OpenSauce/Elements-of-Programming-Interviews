@@ -1,5 +1,11 @@
 package chapter_6
 
-func ReverseAllWords(original string) string {
-	return ""
+import "strings"
+
+func ReverseAllWords(input string) string {
+	words := strings.Fields(input)
+	for i, j := 0, len(words)-1; i < j; i, j = i+1, j-1 {
+		words[i], words[j] = words[j], words[i]
+	}
+	return strings.Join(words, " ")
 }
