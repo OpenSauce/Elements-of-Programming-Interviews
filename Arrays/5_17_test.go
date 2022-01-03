@@ -21,6 +21,7 @@ func TestSudokuChecker(t *testing.T) {
 				{7, 0, 0, 0, 2, 0, 0, 0, 6},
 				{0, 6, 0, 0, 0, 0, 2, 8, 0},
 				{0, 0, 0, 0, 8, 0, 0, 7, 9},
+				{0, 0, 0, 0, 0, 0, 0, 0, 0},
 			},
 			expected: true,
 		},
@@ -34,6 +35,7 @@ func TestSudokuChecker(t *testing.T) {
 				{7, 0, 0, 0, 2, 0, 0, 0, 6},
 				{0, 6, 0, 0, 0, 0, 2, 8, 0},
 				{0, 0, 0, 0, 8, 0, 0, 7, 9},
+				{0, 0, 0, 0, 0, 0, 0, 0, 0},
 			},
 			expected: false,
 		},
@@ -47,19 +49,21 @@ func TestSudokuChecker(t *testing.T) {
 				{7, 0, 0, 0, 2, 0, 0, 0, 6},
 				{0, 6, 0, 0, 0, 6, 2, 8, 0},
 				{0, 0, 0, 0, 8, 0, 0, 7, 9},
+				{0, 0, 0, 0, 0, 0, 0, 0, 0},
 			},
 			expected: false,
 		},
-		"Invalid Sudoku - 3x3 Subarray": {
+		"Leetcode TestCase": {
 			input1: [][]int{
-				{5, 3, 6, 0, 7, 0, 0, 0, 0},
-				{6, 0, 0, 1, 9, 5, 0, 0, 0},
-				{0, 9, 8, 0, 0, 0, 0, 6, 0},
-				{8, 0, 0, 0, 6, 0, 0, 0, 3},
-				{4, 0, 0, 8, 0, 3, 0, 0, 1},
-				{7, 0, 0, 0, 2, 0, 0, 0, 6},
-				{0, 6, 0, 0, 0, 0, 2, 8, 0},
-				{0, 0, 0, 0, 8, 0, 0, 7, 9},
+				{0, 0, 5, 0, 0, 0, 0, 0, 0},
+				{0, 0, 0, 8, 0, 0, 0, 3, 0},
+				{0, 5, 0, 0, 2, 0, 0, 0, 0},
+				{0, 0, 0, 0, 0, 0, 0, 0, 0},
+				{0, 0, 0, 0, 0, 0, 0, 0, 9},
+				{0, 0, 0, 0, 0, 0, 4, 0, 0},
+				{0, 0, 0, 0, 0, 0, 0, 0, 7},
+				{0, 1, 0, 0, 0, 0, 0, 0, 0},
+				{2, 4, 0, 0, 0, 0, 9, 0, 0},
 			},
 			expected: false,
 		},
@@ -67,7 +71,6 @@ func TestSudokuChecker(t *testing.T) {
 
 	for name, tc := range testCases {
 		t.Run(name, func(t *testing.T) {
-			t.Parallel()
 			actual := SudokuChecker(tc.input1)
 			assert.Equal(t, tc.expected, actual)
 		})
